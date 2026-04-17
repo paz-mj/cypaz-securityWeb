@@ -127,7 +127,7 @@ export const FOOTER = {
     { label: 'Producto', href: '#hero' },
     { label: 'Estadísticas', href: '#stats' },
     { label: 'Cumplimiento', href: '#legal' },
-    { label: 'Contacto', href: '#footer' },
+    { label: 'Contacto', href: '#contacto' },
   ],
   social: [
     { label: 'Instagram', href: 'https://www.instagram.com/cypaz.cl/', icon: 'Instagram' },

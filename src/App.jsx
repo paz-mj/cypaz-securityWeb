@@ -12,6 +12,7 @@ import ContactForm from './components/sections/ContactForm';
 import Footer from './components/sections/Footer';
 import NeonButton from './components/ui/NeonButton';
 import { META, FOOTER } from './constants/copy';
+import logoCypaz from './assets/logo-cypaz.png';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
           <a href="#hero" className="flex items-center gap-2.5">
             <div className="bg-neon/10 rounded-lg p-1.5">
               <img
-                src="/src/assets/logo-cypaz.png"
+                src={logoCypaz}
                 alt="Logo Cypaz"
                 className="h-8 w-auto rounded-md"
               />
@@ -83,7 +84,7 @@ function Navbar() {
                 </a>
               ))}
               <div className="pt-2 border-t border-white/5">
-                <NeonButton variant="primary" size="sm" href="#footer" className="w-full justify-center">
+                <NeonButton variant="primary" size="sm" href="#contacto" className="w-full justify-center">
                   Solicitar Demo B2B
                 </NeonButton>
               </div>
