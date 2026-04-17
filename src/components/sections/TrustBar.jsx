@@ -3,54 +3,10 @@ import { motion } from 'framer-motion';
 import { TRUST } from '../../constants/copy';
 
 const logos = [
-  {
-    name: 'UCN',
-    svg: (
-      <svg viewBox="0 0 120 40" fill="currentColor" className="h-8 w-auto">
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
-          fontFamily="Space Grotesk, sans-serif" fontWeight="700" fontSize="22" letterSpacing="3">
-          UCN
-        </text>
-      </svg>
-    ),
-    label: 'Universidad Católica del Norte',
-  },
-  {
-    name: 'ProChile',
-    svg: (
-      <svg viewBox="0 0 140 40" fill="currentColor" className="h-8 w-auto">
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
-          fontFamily="Space Grotesk, sans-serif" fontWeight="600" fontSize="18" letterSpacing="1">
-          ProChile
-        </text>
-      </svg>
-    ),
-    label: 'ProChile — Gobierno de Chile',
-  },
-  {
-    name: 'Nómada',
-    svg: (
-      <svg viewBox="0 0 120 40" fill="currentColor" className="h-8 w-auto">
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
-          fontFamily="Space Grotesk, sans-serif" fontWeight="600" fontSize="18" letterSpacing="1">
-          Nómada
-        </text>
-      </svg>
-    ),
-    label: 'Nómada Hub',
-  },
-  {
-    name: 'StartCo',
-    svg: (
-      <svg viewBox="0 0 130 40" fill="currentColor" className="h-8 w-auto">
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
-          fontFamily="Space Grotesk, sans-serif" fontWeight="700" fontSize="18" letterSpacing="1">
-          StartCo
-        </text>
-      </svg>
-    ),
-    label: 'StartCo Medellín',
-  },
+  { name: 'UCN', src: '/ucn.png' },
+  { name: 'StartCo', src: '/startco.png' },
+  { name: 'ProChile', src: '/prochile.png' },
+  { name: 'Usqai', src: '/usqai.png' },
 ];
 
 export default function TrustBar() {
@@ -71,7 +27,7 @@ export default function TrustBar() {
           {TRUST.headline}
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+        <div className="grid grid-cols-2 gap-4 justify-items-center md:flex md:flex-nowrap md:items-center md:justify-center md:gap-6">
           {logos.map((logo, i) => (
             <motion.div
               key={logo.name}
@@ -79,18 +35,15 @@ export default function TrustBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.08 }}
-              title={logo.label}
-              className="relative group"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-xl p-4 flex items-center justify-center w-32 h-20 shadow-lg border border-white/10"
             >
-              <div
-                className="text-slate-500 group-hover:text-white transition-all duration-400"
-                style={{ filter: 'brightness(0.6)', }}
-              >
-                <div className="group-hover:drop-shadow-[0_0_12px_rgba(46,255,195,0.6)] transition-all duration-400">
-                  {logo.svg}
-                </div>
-              </div>
+              <img
+                src={logo.src}
+                alt={logo.name}
+                loading="lazy"
+                className="max-w-full max-h-full object-contain"
+              />
             </motion.div>
           ))}
         </div>
