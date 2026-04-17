@@ -130,8 +130,7 @@ export const FOOTER = {
     { label: 'Contacto', href: '#footer' },
   ],
   social: [
-    { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'Linkedin' },
-    { label: 'Twitter/X', href: 'https://x.com', icon: 'Twitter' },
+    { label: 'Instagram', href: 'https://instagram.com', icon: 'Instagram' },
     { label: 'Email', href: 'mailto:hola@cypaz.com', icon: 'Mail' },
   ],
   legal: '© 2025 Cypaz SpA. Todos los derechos reservados. Desarrollado en Chile 🇨🇱',

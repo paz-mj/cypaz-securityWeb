@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Menu, X } from 'lucide-react';
-import Hero from './sections/Hero';
-import StatsDisc from './sections/StatsDisc';
+
+import Hero from './components/sections/Hero';
+import StatsDisc from './components/sections/StatsDisc';
 import TrustBar from './components/sections/TrustBar';
 import LegalCompliance from './components/sections/LegalCompliance';
 import Footer from './components/sections/Footer';

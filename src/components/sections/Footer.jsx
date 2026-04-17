@@ -1,10 +1,13 @@
 // src/components/sections/Footer.jsx
 import { motion } from 'framer-motion';
-import { Shield, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
+import { Shield, Mail, Link, Instagram } from 'lucide-react';
 import NeonButton from '../ui/NeonButton';
 import { FOOTER, META } from '../../constants/copy';
 
-const SOCIAL_ICONS = { Linkedin, Twitter, Mail };
+const SOCIAL_ICONS = { 
+  Instagram: Instagram,
+  Mail: Mail 
+};
 
 export default function Footer() {
   return (
@@ -38,11 +41,6 @@ export default function Footer() {
               <Mail className="w-4 h-4" />
               hola@cypaz.com
             </NeonButton>
-            <NeonButton variant="ghost" size="lg" href="https://linkedin.com">
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-              <ExternalLink className="w-3 h-3 opacity-60" />
-            </NeonButton>
           </div>
         </motion.div>
 
@@ -75,7 +73,7 @@ export default function Footer() {
           {/* Social */}
           <div className="flex items-center gap-3">
             {FOOTER.social.map((s) => {
-              const Icon = SOCIAL_ICONS[s.icon];
+              const Icon = SOCIAL_ICONS[s.icon] ?? Link;
               return (
                 <motion.a
                   key={s.label}

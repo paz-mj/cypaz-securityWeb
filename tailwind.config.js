@@ -30,8 +30,8 @@ export default {
       },
       animation: {
         'pulse-neon': 'pulseNeon 3s ease-in-out infinite',
-        'scan': 'scan 4s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+        scan: 'scan 4s linear infinite',
+        float: 'float 6s ease-in-out infinite',
         'grid-move': 'gridMove 20s linear infinite',
       },
       keyframes: {
