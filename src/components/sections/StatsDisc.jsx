@@ -25,11 +25,55 @@ function useCountUp(target, duration = 2000, trigger = false) {
   return value;
 }
 
+function useIndustryAttackCounter(trigger, baseValue = 1500, ratePerSecond = 1500) {
+  const [value, setValue] = useState(baseValue);
+
+  useEffect(() => {
+    if (!trigger) {
+      setValue(baseValue);
+      return;
+    }
+
+    let rafId;
+    const startTime = performance.now();
+    let lastTime = startTime;
+    let totalAdded = 0;
+
+    const tick = (now) => {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      const elapsedSeconds = (now - startTime) / 1000;
+      const expectedTotal = elapsedSeconds * ratePerSecond;
+      const expectedStep = dt * ratePerSecond;
+
+      const randomFactor = 0.75 + Math.random() * 0.5;
+      const randomStep = expectedStep * randomFactor;
+
+      // Correct drift progressively so the long-term average stays close to 1500/s.
+      const drift = expectedTotal - totalAdded;
+      const correction = drift * 0.08;
+
+      totalAdded += Math.max(0, randomStep + correction);
+      setValue(baseValue + Math.round(totalAdded));
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [trigger, baseValue, ratePerSecond]);
+
+  return value;
+}
+
 function StatCard({ stat, isActive, onClick, index }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   const Icon = ICONS[stat.icon];
-  const count = useCountUp(stat.value, 1800, isActive || inView);
+  const animatedCount = useCountUp(stat.value, 1800, isActive || inView);
+  const liveAttacks = useIndustryAttackCounter(inView, stat.value, 1500);
+  const count = stat.id === 'attacks' ? liveAttacks : animatedCount;
 
   useEffect(() => {
     const observer = new IntersectionObserver(

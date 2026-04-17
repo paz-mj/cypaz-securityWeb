@@ -73,7 +73,7 @@ export default function Hero() {
             className="absolute inset-0 rounded-full blur-2xl opacity-40"
             style={{ background: '#2effc3', transform: 'scale(1.4)' }}
           />
-          <div className="relative glass neon-border rounded-full p-5">
+          <div className="relative glass neon-border rounded-full p-4 flex items-center justify-center">
             <Shield className="w-10 h-10 text-neon" strokeWidth={1.5} />
           </div>
         </div>

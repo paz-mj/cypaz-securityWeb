@@ -5,7 +5,7 @@ export const META = {
     'Extensión de navegador con IA que detecta amenazas de phishing antes de que el usuario haga clic — la primera línea de defensa donde el 90% de los ataques comienza.',
   ctaPrimary: 'Solicitar Demo B2B',
   ctaSecondary: 'Ver cómo funciona',
-  badge: 'Presentado en StartCo Medellín 2025',
+  badge: 'Presentado en StartCo Medellín 2026',
 };
 
 export const HERO = {
@@ -108,7 +108,7 @@ export const LEGAL = {
       ],
     },
   ],
-  cta: 'Solicitar informe de cumplimiento',
+  cta: 'Solicitar reunión de cumplimiento',
 };
 
 export const TRUST = {
@@ -130,8 +130,8 @@ export const FOOTER = {
     { label: 'Contacto', href: '#footer' },
   ],
   social: [
-    { label: 'Instagram', href: 'https://instagram.com', icon: 'Instagram' },
-    { label: 'Email', href: 'mailto:hola@cypaz.com', icon: 'Mail' },
+    { label: 'Instagram', href: 'https://www.instagram.com/cypaz.cl/', icon: 'Instagram' },
+    { label: 'Email', href: 'mailto:cypaz.chile@gmail.com', icon: 'Mail' },
   ],
-  legal: '© 2025 Cypaz SpA. Todos los derechos reservados. Desarrollado en Chile 🇨🇱',
+  legal: '© 2025 Cypaz. Todos los derechos reservados. Desarrollado en Chile 🇨🇱',
 };

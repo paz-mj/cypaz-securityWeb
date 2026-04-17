@@ -37,9 +37,9 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <NeonButton variant="primary" size="lg" href="mailto:hola@cypaz.com">
+            <NeonButton variant="primary" size="lg" href="mailto:cypaz.chile@gmail.com">
               <Mail className="w-4 h-4" />
-              hola@cypaz.com
+              cypaz.chile@gmail.com
             </NeonButton>
           </div>
         </motion.div>
