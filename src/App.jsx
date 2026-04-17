@@ -12,7 +12,6 @@ import ContactForm from './components/sections/ContactForm';
 import Footer from './components/sections/Footer';
 import NeonButton from './components/ui/NeonButton';
 import { META, FOOTER } from './constants/copy';
-import logoCypaz from './assets/logo-cypaz.png';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,14 +21,7 @@ function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
         <div className="max-w-6xl mx-auto glass neon-border rounded-xl px-5 py-3 flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2.5">
-            <div className="bg-neon/10 rounded-lg p-1.5">
-              <img
-                src={logoCypaz}
-                alt="Logo Cypaz"
-                className="h-8 w-auto rounded-md"
-              />
-            </div>
+          <a href="#hero" className="flex items-center">
             <span className="font-display font-bold text-white text-lg tracking-tight">{META.name}</span>
           </a>
 
